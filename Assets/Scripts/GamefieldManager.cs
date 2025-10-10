@@ -20,7 +20,7 @@ namespace EventBus
 
         private void OnDisable()
         {
-            EventBus.UnsubscribeFromEvent<OnGametileCliick>(SetClickedCell);            
+            EventBus.UnsubscribeFromEvent<OnGametileCliick>(SetClickedCell);
         }
 
 
@@ -30,3 +30,4 @@ namespace EventBus
         }
     }
 }
+

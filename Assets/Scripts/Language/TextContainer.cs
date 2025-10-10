@@ -8,8 +8,6 @@ namespace EventBus
     public class TextContainer : PersistentSingleton<TextContainer>
     {
         public static event Action<Dictionary<string, string>> OnChangeMenuLanguage;
-        public static event Action<Dictionary<string, (string characterName, string text)>> OnGameLanguageChange;
-
 
         public LanguageState CurrentLanguage { get; private set; }
 
@@ -21,9 +19,8 @@ namespace EventBus
         public Dictionary<string, string> CurrentMenuTexts => _currentMenuTexts;
 
 
-        private Dictionary<string, (string characterName, string text)> _currentGameTexts;
-        public Dictionary<string, (string characterName, string text)> CurrentDialogueTexts => _currentGameTexts;
-
+        private Dictionary<string, (string word, string hint)> _currentGameTexts;
+        public Dictionary<string, (string word, string hint)> CurrentGameText => _currentGameTexts;
 
 
         private static readonly Dictionary<LanguageState, Type> LanguageMap = new()
@@ -38,7 +35,7 @@ namespace EventBus
 
         public void SetTextLanguage(LanguageState language)
         {
-            // if (CurrentLanguage == language) return;
+
             CurrentLanguage = language;
 
             if (LanguageMap.TryGetValue(language, out var type))
@@ -51,10 +48,7 @@ namespace EventBus
                 Debug.LogError($"Language {language} not found");
             }
 
-
             OnChangeMenuLanguage?.Invoke(_currentMenuTexts);
-            OnGameLanguageChange?.Invoke(_currentGameTexts);
-
         }
 
 

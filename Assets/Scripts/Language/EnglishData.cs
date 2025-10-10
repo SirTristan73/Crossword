@@ -18,11 +18,12 @@ public class EnglishData : LanguageData
     public override Dictionary<string, string> MenuTexts => _menuTexts;
 
 
-    private Dictionary<string, (string characterName, string text)> _dialogueTexts = new Dictionary<string, (string characterName, string text)>()
+    private Dictionary<string, (string word, string hint)> _dialogueTexts = new Dictionary<string, (string word, string hint)>()
     {
-
+        {"sasd", ("asda", "sada")},
+        {"sagadadsd", ("asdgagaa", "sadaagaga")},
     };
 
 
-    public override Dictionary<string, (string characterName, string text)> DialogueTexts => _dialogueTexts;
+    public override Dictionary<string, (string word, string hint)> DialogueTexts => _dialogueTexts;
 }
