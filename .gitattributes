@@ -1,0 +1,12 @@
+# Unity YAML
+*.unity text eol=lf
+*.prefab text eol=lf
+*.asset text eol=lf
+*.controller text eol=lf
+*.spriteatlasv2 text eol=lf
+*.inputactions text eol=lf
+
+# Scripts
+*.cs text eol=lf
+*.shader text eol=lf
+*.txt text eol=lf
