@@ -24,8 +24,6 @@ public class GridEditingState : EditorState
 
 
 
-
-
     public override void OnGUI()
     {
 
@@ -148,7 +146,7 @@ public class GridEditingState : EditorState
     {
         if (Event.current.button == 1)
         {
-            _currentEditingLevel.ChangeCellBlocking(index);
+            WordCheck.ChangeCellBlocking(_currentEditingLevel, index);
 
             _saveRequired = true;
 
@@ -173,15 +171,20 @@ public class GridEditingState : EditorState
 
         List<string> rawWords = new();
 
+        List<string> hints = new();
+
         foreach (var pair in dialogueData)
         {
             string word = pair.Value.word;
+            string hint = pair.Value.hint;
  
             if (!string.IsNullOrEmpty(word))
             {
                 displayWords.Add($"{word.ToUpper()}  Word length: {word.Length}");
 
                 rawWords.Add(word);
+
+                hints.Add(hint);
             }
         }
 
@@ -205,15 +208,19 @@ public class GridEditingState : EditorState
         {
             string selectedWord = rawWords[newSelection];
 
+            string selectedHint = hints[newSelection];
+
             bool isPlacingPossible = WordCheck.IsWordsConflicted(_currentEditingLevel, selectedWord, _selectedCellInd, _isSetToHorizontal);
 
             if (isPlacingPossible)
             {
-                _currentEditingLevel.AddWord(new WordData
+                WordCheck.AddWord(_currentEditingLevel,
+                                    new WordData
                 {
                     _startIndex = _selectedCellInd,
                     _wordHere = selectedWord,
-                    _isHorizontal = _isSetToHorizontal
+                    _isHorizontal = _isSetToHorizontal,
+                    _hint = selectedHint
                 });
 
                 _saveRequired = true;
@@ -273,28 +280,15 @@ public class GridEditingState : EditorState
         {
             return;
         }
-        else
-        {
-            Debug.Log("save");
-            EditorApplication.delayCall += () =>
-            {
-                if (!_saveRequired)
-                {
-                    return;
-                }
-                else
-                {
-                    EditorUtility.SetDirty(_currentEditingLevel);
 
-                    AssetDatabase.SaveAssets();
+        EditorUtility.SetDirty(_currentEditingLevel);
 
-                    _saveRequired = false;
+        AssetDatabase.SaveAssets();
 
-                    _editor.Repaint();
-                }
-            };
-            _saveRequired = false;
-        }
+        _saveRequired = false;
+
+        _editor.Repaint();
+
     }
  
 

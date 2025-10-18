@@ -11,4 +11,4 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 776fd4ccb5571ce4f9a6493967d3380b, type: 3}
   m_Name: EnglishData
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnglishData

@@ -13,8 +13,6 @@ namespace EventBus
 
         [SerializeField] private LanguageData[] _languageData;
 
-
-
         private Dictionary<string, string> _currentMenuTexts;
         public Dictionary<string, string> CurrentMenuTexts => _currentMenuTexts;
 
@@ -22,6 +20,16 @@ namespace EventBus
         private Dictionary<string, (string word, string hint)> _currentGameTexts;
         public Dictionary<string, (string word, string hint)> CurrentGameText => _currentGameTexts;
 
+        private char[] _currentAlphabet;
+        private int[] _currentKeyboardLengths;
+
+        public int[] KeyboardRowLengths => _currentKeyboardLengths;
+        public char[] KeyboardAlphabet => _currentAlphabet;
+
+
+        /// <summary>
+        /// Refactor with crossword requirements
+        /// </summary>
 
         private static readonly Dictionary<LanguageState, Type> LanguageMap = new()
         {
@@ -41,7 +49,12 @@ namespace EventBus
             if (LanguageMap.TryGetValue(language, out var type))
             {
                 _currentGameTexts = GetDialogueTexts(type);
+
                 _currentMenuTexts = GetMenuTexts(type) ?? new Dictionary<string, string>();
+
+                _currentAlphabet = GetKeyboardAlphabet(type);
+
+                _currentKeyboardLengths = GetKeyboardLenghts(type);
             }
             else
             {
@@ -61,6 +74,7 @@ namespace EventBus
                     return data.MenuTexts;
                 }
             }
+
             Debug.LogError("NotFOund");
             return null;
         }
@@ -75,8 +89,39 @@ namespace EventBus
                     return data.DialogueTexts;
                 }
             }
+            
             Debug.LogError("NotFOund");
             return new Dictionary<string, (string, string)>();
+        }
+
+
+        private char[] GetKeyboardAlphabet(Type type)
+        {
+            foreach (var data in _languageData)
+            {
+                if (data.GetType() == type)
+                {
+                    return data.KeyboardAlphabet;
+                }
+            }
+
+            Debug.LogError("Not found");
+            return null;
+        }
+
+
+        private int[] GetKeyboardLenghts(Type type)
+        {
+            foreach (var data in _languageData)
+            {
+                if (data.GetType() == type)
+                {
+                    return data.KeyboardRowLengths;
+                }
+            }
+
+            Debug.LogError("Not found");
+            return null;
         }
 
 

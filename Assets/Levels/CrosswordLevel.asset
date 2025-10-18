@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064fe33947d1bd24eb41304f76c75d68, type: 3}
+  m_Name: CrosswordLevel
+  m_EditorClassIdentifier: Assembly-CSharp::CrosswordLevel
+  _size: 10
+  _levelsLanguage: 0
+  _isCellBlocked: 00000000000001000100000101000100010001000001010001000100010000010100010001000100000101000100010001000001010101000101010000000000000101010100010101010101010101000000000000000101010101010101010101010101
+  _words:
+  - _startIndex: 5
+    _isHorizontal: 0
+    _wordHere: desert
+    _hint: Endless sandbox
+  - _startIndex: 0
+    _isHorizontal: 0
+    _wordHere: whisper
+    _hint: Secret delivered on low volume
+  - _startIndex: 60
+    _isHorizontal: 1
+    _wordHere: robot
+    _hint: Servant who will remember this later
+  - _startIndex: 80
+    _isHorizontal: 1
+    _wordHere: window
+    _hint: Transparent wall you clean twice a year
+  - _startIndex: 9
+    _isHorizontal: 0
+    _wordHere: particle
+    _hint: Tiny piece of matter or dust in your eye
+  - _startIndex: 7
+    _isHorizontal: 0
+    _wordHere: storm
+    _hint: When the sky gets emotional
+  - _startIndex: 3
+    _isHorizontal: 0
+    _wordHere: apple
+    _hint: A fruit that keeps doctors away
+  - _startIndex: 0
+    _isHorizontal: 1
+    _wordHere: wizard
+    _hint: Old man who shouts 'fireball!'

@@ -206,7 +206,7 @@ MonoBehaviour:
   m_fontSize: 72
   m_fontSizeBase: 72
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_fontSize: 72
   m_fontSizeBase: 72
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _languageData:
-  - {fileID: 11400000, guid: d9aca88c8f50b944194fa315e402ae8b, type: 2}
+  - {fileID: 11400000, guid: 49a382db6e6a5fa4891d73d8a25bc232, type: 2}
   - {fileID: 11400000, guid: 22259973c1966704da1befe440a1ea29, type: 2}
 --- !u!1 &1284399238
 GameObject:
@@ -1506,7 +1506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8311271282109412875, guid: e13ecf96c8f14cd44b4c3ee391b1e1de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8311271282109412875, guid: e13ecf96c8f14cd44b4c3ee391b1e1de, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1514,15 +1514,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8311271282109412875, guid: e13ecf96c8f14cd44b4c3ee391b1e1de, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8311271282109412875, guid: e13ecf96c8f14cd44b4c3ee391b1e1de, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8311271282109412875, guid: e13ecf96c8f14cd44b4c3ee391b1e1de, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8311271282109412875, guid: e13ecf96c8f14cd44b4c3ee391b1e1de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1554,11 +1554,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8311271282109412875, guid: e13ecf96c8f14cd44b4c3ee391b1e1de, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 512
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8311271282109412875, guid: e13ecf96c8f14cd44b4c3ee391b1e1de, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -830
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8311271282109412875, guid: e13ecf96c8f14cd44b4c3ee391b1e1de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

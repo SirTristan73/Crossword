@@ -26,6 +26,24 @@ public class RussianData : LanguageData
 
 
     public override Dictionary<string, (string word, string hint)> DialogueTexts => _dialogueTexts;
+
+
+    private char[] _alphabet = new char[]
+    {
+        'а', 'б', 'в', 'г'
+    };
+
+
+    public override char[] KeyboardAlphabet => _alphabet;
+
+
+
+    private int[] _keyboardRows = new int[]
+    {
+        10, 9, 7
+    };
+
+    public override int[] KeyboardRowLengths => _keyboardRows;
 }
 
 
