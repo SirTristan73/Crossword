@@ -39,11 +39,6 @@ namespace EventBus
 
         public void SetState(CrosswordCellState state)
         {
-            if (_myState == state)
-            {
-                return;
-            }
-
             switch (state)
             {
                 case CrosswordCellState.Default:

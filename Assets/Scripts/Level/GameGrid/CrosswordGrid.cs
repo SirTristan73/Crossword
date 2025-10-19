@@ -132,7 +132,7 @@ namespace EventBus
 
                 btn.transform.SetParent(_gridLayout.transform, false);
 
-                bool isEmpty = _requestedChars[i] == '\0';
+                bool isEmpty = _requestedChars[i] == '\0' || _currentLevel.CheckIfCellBlocked(i);
 
                 if (isEmpty)
                 {
